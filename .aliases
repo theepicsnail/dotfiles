@@ -1,5 +1,5 @@
 alias og="ssh snail@og.hashbang.sh"
-alias ssh-agent="eval `ssh-agent`; ssh-add"
+alias agent='exec ssh-agent gpg-agent --daemon $SHELL'
 
 # Git aliases
 alias commit="git commit"
