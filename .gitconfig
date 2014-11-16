@@ -1,3 +1,5 @@
 [user]
 	email = theepicsnail@gmail.com
 	name = theepicsnail
+[push]
+	default = simple
