@@ -1,2 +1,10 @@
 alias og="ssh snail@og.hashbang.sh"
 alias ssh-agent="eval `ssh-agent`; ssh-add"
+
+# Git aliases
+alias commit="git commit"
+alias push="git push"
+alias pull="git pull"
+alias add="git add"
+alias gap="git add -p"
+alias revert="git checkout --"
