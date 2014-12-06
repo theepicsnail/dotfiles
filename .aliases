@@ -1,6 +1,6 @@
 alias startx="exec startx"
 
-alias og="ssh snail@og.hashbang.sh"
+alias og="mosh snail@og.hashbang.sh"
 alias agent='exec ssh-agent gpg-agent --daemon $SHELL'
 
 # Git aliases
