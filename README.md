@@ -22,7 +22,7 @@ git submodule update
 # Clone read only over http (This is probably what you want)
 git clone https://github.com/theepicsnail/dotfiles.git
 mv dotfiles/.git .
-rm dotfiles
+rm -rf dotfiles
 git reset --hard
 git submodule init
 git submodule update
