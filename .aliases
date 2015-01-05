@@ -1,5 +1,6 @@
 alias startx="exec startx"
 
+alias shell="ssh snail@home.theepicsnail.net -p 6666"
 alias og="mosh snail@og.hashbang.sh"
 alias agent='exec ssh-agent gpg-agent --daemon $SHELL'
 
