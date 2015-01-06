@@ -7,4 +7,10 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+if pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
+  . .gnupg/.gpg-agent-env
+else
+  eval `keychain --eval`
+fi
+
 source ~/.aliases
