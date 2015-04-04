@@ -1,3 +1,24 @@
+syntax enable
+filetype plugin on
+set number
+
+set nocompatible
+" filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'fatih/vim-go'
+
+" au FileType go
+nmap <Leader>s <Plug>(go-implements)
+" au FileType go
+nmap <Leader>r <Plug>(go-run)
+" au FileType go
+nmap <Leader>t <Plug>(go-test)
+call vundle#end()
+filetype plugin indent on
+
+
 " Tabs
 set expandtab
 set smarttab
@@ -30,3 +51,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Highlight column 80
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
+
+
+
