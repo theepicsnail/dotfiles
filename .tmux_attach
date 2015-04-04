@@ -1,16 +1,19 @@
 #!/usr/bin/env bash
-base_session="main"
-if [[ "$tmux_nb" == "0" ]]; then
-    tmux new-session -s $base_session
-else
-    # Make sure we are not already in a tmux session
-    if [[ -z "$TMUX" ]]; then
-        # Kill defunct sessions first
-        tmux ls -F '#S #{session_attached}' | sed -n 's_^\([0-9]\+\) 0$_\1_p' | xargs -n 1 tmux kill-session -t
 
-        session_id=`date +%Y%m%d%H%M%S`
-        tmux new-session -t $base_session -s $session_id
-    fi
+base_session="main"
+
+# Create the base session if necessary
+if [[ -z "$(tmux ls | egrep "^$base_session")" ]]; then
+    tmux new-session -d -s $base_session
+fi
+
+# Make sure we are not already in a tmux session
+if [[ -z "$TMUX" ]]; then
+    # Kill defunct sessions first
+    tmux ls -F '#S #{session_attached}' | sed -n 's_^[[:digit:]]\+ 0$_\1_p' | xargs -n 1 tmux kill-session -t
+
+    session_id=`date +%Y%m%d%H%M%S`
+    tmux new-session -t $base_session -s $session_id
 fi
 
 
