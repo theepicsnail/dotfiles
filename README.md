@@ -28,5 +28,6 @@ git submodule init
 git submodule update
 rm -rf .git*
 
-
+# Disable desktop from showing up when running nautlius
+gsettings set org.gnome.desktop.background show-desktop-icons false
 ```
